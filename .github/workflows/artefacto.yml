@@ -46,3 +46,18 @@ jobs:
         with:
           name: teste_1
           path: new.tar.gz
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/download-artifact@v3.0.1
+        with:
+          name: teste_1
+          path: new.tar.gz
+
+      - name: testar artefacto
+        run: | 
+          ls -l
+          tar zfvx new.tar.gz
+          ls
+      
+  
