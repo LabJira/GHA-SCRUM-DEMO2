@@ -53,7 +53,6 @@ jobs:
       - uses: actions/download-artifact@v3.0.1
         with:
           name: teste_1
-          path: new.tar.gz
 
       - name: testar artefacto
         run: | 
