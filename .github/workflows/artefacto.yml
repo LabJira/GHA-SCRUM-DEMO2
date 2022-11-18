@@ -25,8 +25,16 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: zippar_ficheiro
-        run: gzip -c * > new.gz
-
+        run: tar -czvf new.tar.gz *
+      
+      - name: testar artefacto
+        run: | 
+          mkdir teste
+          cp new.tar.gz teste
+          cd teste
+          tar -zfvx new.tar.gz
+          ls
+          
       # Runs a set of commands using the runners shell
       - name: Validar lista de ficheiros
         run: ls
@@ -35,4 +43,4 @@ jobs:
         uses: actions/upload-artifact@v3.1.1
         with:
           name: teste_1
-          path: new.gz
+          path: new.tar.gz
