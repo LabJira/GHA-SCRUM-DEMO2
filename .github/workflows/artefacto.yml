@@ -58,6 +58,7 @@ jobs:
       - name: testar artefacto
         run: | 
           ls -l
+          file new.tar.gz
           tar zfvx new.tar.gz
           ls
       
