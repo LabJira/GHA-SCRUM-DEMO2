@@ -50,10 +50,10 @@ jobs:
     needs: build
     runs-on: ubuntu-18.04
     steps:
+    # usar path nesta action, cria uma directoria
       - uses: actions/download-artifact@v3.0.1
         with:
           name: teste_1
-
       - name: testar artefacto
         run: | 
           ls -l
